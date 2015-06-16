@@ -1,0 +1,94 @@
+<html ng-app="app">
+    <head>
+        <title>Ex 5</title>
+    </head>
+    <body>
+        <ng-view></ng-view>
+        <script type="text/javascript" src="js/lib/angular.js"></script>
+        <script type="text/javascript" src="js/lib/angular-animate.js"></script>
+        <script type="text/javascript" src="js/lib/angular-touch.js"></script>
+        <script type="text/javascript" src="js/lib/angular-route.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="js/lib/ui-grid.js"></script>
+        <script type="text/javascript" src="js/lib/jquery.js"></script>
+        <script type="text/javascript" src="js/lib/underscore.js"></script>
+        <script type="text/javascript" src="js/lib/socket.io.js"></script>
+        <script type="text/javascript" src="js/controllers/messageForEditCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/messagesForDisplaysGridCtrl.js"></script>
+        <script type="text/javascript" src="js/services/messageService.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var socket = io();
+
+                $.ajax('http://127.0.0.1:3000/stationId/1',{
+                    type:"GET",
+                    crossDomain : true,
+                    dataType:"json"
+                })
+                .success(function (data) {
+                    placeMessage(data);
+                });
+
+                socket.on('messageChanged', function(data){
+                    placeMessage(data);
+                });
+
+                var placeMessage = function(messages){
+                    var validMessage = _.find(messages, function (message) {
+                        return shouldShowMessage(message);
+                    });
+                    if(validMessage){
+                        messages = _.reject(messages, function (message) {
+                            return message.id == validMessage.id
+                        });
+                        messages.push(validMessage);
+                        setMessageInTemplate(validMessage);
+
+                        setTimeout(placeMessage, validMessage.time * 1000);
+                    } else {
+                        setTimeout(placeMessage, 1000);
+                    }
+                };
+
+                var shouldShowMessage = function(message){
+                    var currentDate = new Date();
+                    return _.some(message.timeFrames, function (timeFrame) {
+                        var startDate = new Date(timeFrame.dateFrom);
+                        var endDate = new Date(timeFrame.dateTo);
+                        if(currentDate <= endDate && currentDate >= startDate){
+                            var startTime = new Date(currentDate.getMonth() + 1 + " " + currentDate.getDate() + ", " + currentDate.getFullYear() + " ," + timeFrame.timeOfDayFrom );
+                            var endTime = new Date(currentDate.getMonth() + 1 + " " + currentDate.getDate() + ", "  + currentDate.getFullYear() + " ," + timeFrame.timeOfDayTo);
+                            if(currentDate <= endTime && currentDate >= startTime){
+                                return _.contains(timeFrame.dayOfTheWeek, currentDate.getDay() + 1);
+                            }
+                        }
+                    })
+                };
+
+                var setMessageInTemplate = function(message){
+                    $( "#adv" ).load( "./" + message.template,"",function(){
+                        for(var i = 0; i < message.text.length; i++){
+                            $( "#" + (i + 1) + "Text" ).append(message.text[i]);
+                        }
+                        for(var i = 0; i < message.pictures.length; i++){
+                            $( "#" + (i + 1) + "Picture" ).append('<img id="theImg" src=' + message.pictures[i] + ' />');
+                        }
+                    });
+                };
+            });
+
+            var testIo = function() {
+                $.ajax('http://localhost:3000/TestUpdate/1',{
+                    type:"PUT",
+                    crossDomain : true,
+                    dataType:"json",
+                })
+                        .success(function (data) {
+                            console.log(data);
+                        });
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="style/ui-grid.css"/>
+    </body>
+</html>
+
