@@ -75,7 +75,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/main.html');
+    res.sendFile(__dirname + '/public/main.html');
 });
 
 app.get('/stationId/:stationId', function(req, res){
