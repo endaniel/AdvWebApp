@@ -1,0 +1,17 @@
+{
+  "name": "ex5",
+  "version": "0.0.0",
+  "description": "web",
+  "main": "main",
+  "keywords": [
+    "web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
