@@ -3,7 +3,13 @@
     app.config(function($routeProvider){
         $routeProvider
             .when('/',{
-                templateUrl:'views/view0.html'
+                templateUrl: 'views/messagesForDisplaysGrid.html',
+                controller: 'messagesForDisplaysGridCtrl',
+                resolve:{
+                    allMessages: function(messageService){
+                        return messageService.getAll();
+                    }
+                }
             })
             .when('/messagesForDisplays', {
                 templateUrl: 'views/messagesForDisplaysGrid.html',
