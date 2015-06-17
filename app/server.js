@@ -114,7 +114,7 @@ app.delete('message/:messageId/displayStation/:stationId', function(req, res){
         }
         res.ok(result)
     });
-})
+});
 
 app.put('/TestUpdate/:stationId', function (req, res) {
     var stationId = +req.params.stationId;
