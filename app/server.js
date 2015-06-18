@@ -1,5 +1,6 @@
 var express = require("express");
 var mongodb = require('mongodb');
+var path = require('path');
 var http = require('http');
 var MongoClient = mongodb.MongoClient;
 var app = express();
@@ -17,6 +18,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                 db.collection('messages').insert([
                    {
                        id: 1,
+                       name: 'guy',
                        text: ['first','second','third','forth'],
                        pictures: ['img/first.jpg','img/second.jpg'],
                        template: 'templates/templateA.html',
@@ -26,6 +28,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 2,
+                       name: 'guy',
                        text: ['first','second','third','forth','fifth','sixth','seventh','eighth','ninth','ten'],
                        pictures: ['img/first.jpg'],
                        template: 'templates/templateB.html',
@@ -35,6 +38,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 3,
+                       name: 'guy',
                        text: [],
                        pictures: [],
                        template: 'templates/templateC.html',
@@ -44,6 +48,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 4,
+                       name: 'guy',
                        text: ["first","second"],
                        pictures: [],
                        template: 'templates/templateA.html',
@@ -53,6 +58,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 5,
+                       name: 'guy',
                        text: ['first','second','third','forth','fifth','sixth','seventh'],
                        pictures: ['img/first.jpg','img/second.jpg'],
                        template: 'templates/templateB.html',
@@ -96,7 +102,17 @@ app.get('/messages', function(req, res){
         }
         res.json(docs)
     })
-})
+});
+
+app.get('/api/message/:id', function(req, res){
+    db.collection("messages").findOne({id: parseInt(req.params.id)}, function(err, docs) {
+        res.json(docs)
+    });
+});
+
+app.get('*', function(req,res) {
+    res.sendFile('main.html', {root:path.join(__dirname, 'public')});
+});
 
 app.delete('message/:messageId/displayStation/:stationId', function(req, res){
     var stationId = +req.params.stationId;

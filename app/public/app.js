@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('app', ['ngRoute', 'ui.grid', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial']);
+    var app = angular.module('app', ['ngRoute', 'ui.grid', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular']);
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
         $routeProvider
@@ -17,7 +17,7 @@
             })
             .when('/message/:id',{
                 templateUrl: 'views/message.html',
-                controller: 'messagesForEdit',
+                controller: 'messageForEditCtrl',
                 controllerAs:'messageEditor'
             })
             .otherwise({
