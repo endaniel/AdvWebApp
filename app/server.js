@@ -6,6 +6,7 @@ var MongoClient = mongodb.MongoClient;
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var bodyParser = require('body-parser')
 var db = {};
 
 MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
@@ -15,7 +16,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
     db.collection("system.namespaces").find({name: "test.messages"}).toArray(
         function(err, docs) {
             if(!docs.length) {
-                db.collection('messages').insert([
+                db.collection('messages').insertMany([
                    {
                        id: 1,
                        name: 'guy',
@@ -79,6 +80,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
 });
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/main.html');
@@ -100,13 +102,31 @@ app.get('/messages', function(req, res){
         if(err){
             res.error("failed getting messages");
         }
-        res.json(docs)
+        res.json(docs);
     })
 });
 
 app.get('/api/message/:id', function(req, res){
     db.collection("messages").findOne({id: parseInt(req.params.id)}, function(err, docs) {
-        res.json(docs)
+        res.json(docs);
+    });
+});
+
+app.put('/api/message/:id', function(req, res){
+    var message = req.body;
+    delete message._id;
+    db.collection("messages").findOneAndUpdate({id: parseInt(req.params.id)}, message, function(err, docs) {
+        res.json(docs.value);
+    });
+});
+
+app.post('/api/message', function(req, res){
+    db.collection("messages").findOne({$query:{},$orderby:{id:-1}}, function (err, docs) {
+        var message = req.body;
+        message.id = docs.id + 1;
+        db.collection("messages").insertOne(req.body, function(err, docs) {
+            res.json(docs.ops[0]);
+        });
     });
 });
 

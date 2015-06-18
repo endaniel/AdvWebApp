@@ -1,4 +1,4 @@
-<div layout="column" layout-align="center center">
+<form name="messageForm" ng-submit="messageEditor.save(messageForm)" layout="column" layout-align="center center">
     <div layout="column">
         <div layout="row">
             <label flex flex-order="1">שם הודעה</label>
@@ -60,5 +60,6 @@
             <label flex flex-order="1">קביעת מסגרת זמנים</label>
             <input type="text" flex flex-order="2">
         </div>
+        <md-button >שמור</md-button>
     </div>
-</div>
+</form>

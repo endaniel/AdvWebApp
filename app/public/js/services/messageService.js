@@ -12,6 +12,14 @@
         this.get = function (id) {
             return Restangular.one('api/message',id).get();
         };
+
+        this.update = function (message) {
+            return message.put();
+        };
+
+        this.save = function (message) {
+            return Restangular.all('api/message').post(message);
+        };
     }
 
     angular.module('app').service('messageService', ['$http','Restangular', messageService]);
