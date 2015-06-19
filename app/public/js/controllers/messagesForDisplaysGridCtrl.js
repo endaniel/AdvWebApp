@@ -16,7 +16,7 @@
                 {field: 'messageId', displayName: 'Message Id'},
                 {field: 'displayStationId', displayName: 'Stations Id'},
                 {name: 'delete', displayName: '', cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>'}
-            ],
+            ]
         }
     }
 

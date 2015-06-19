@@ -98,7 +98,7 @@ app.get('/messages', function(req, res){
     })
 })
 
-app.delete('message/:messageId/displayStation/:stationId', function(req, res){
+app.delete('/messageDisplayRelation/:messageId/:stationId', function(req, res){
     var stationId = +req.params.stationId;
     var messageId = +req.params.messageId;
     //db.collection("messages").find({"displayStationIds": stationId}).toArray(function(err, docs){
@@ -112,7 +112,7 @@ app.delete('message/:messageId/displayStation/:stationId', function(req, res){
         if(err){
             res.error("failed getting messages");
         }
-        res.ok(result)
+        res.ok()
     });
 })
 

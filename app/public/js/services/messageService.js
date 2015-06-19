@@ -6,7 +6,7 @@
         }
 
         this.removeMessageDisplayRelation = function(messageDisplayRelation){
-            return $http.delete('message/' + messageDisplayRelation.messageId + '/displayStation/' + messageDisplayRelation.displayStationId, {data : messageDisplayRelation})
+            return $http.delete('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId)
         }
     }
 
