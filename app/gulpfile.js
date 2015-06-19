@@ -57,7 +57,7 @@ gulp.task('build-js', ['clean', 'lint'], function() {
 
 // inject <script> and <stylesheets> tags for dev
 gulp.task('inject-dev', ['concat-components'], function() {
-    var target = gulp.src('main.html');
+    var target = gulp.src('public/main.html');
     var sources = gulp.src(['public/build/components/components.js',javascriptsGlobPattern, cssGlobPattern, 'public/bower_components/bootstrap/dist/css/bootstrap.css']);
     //.pipe(angularFileSort());
 
@@ -69,7 +69,7 @@ gulp.task('inject-dev', ['concat-components'], function() {
 
 // inject <script> and <stylesheets> tags for prod
 gulp.task('inject-prod', ['build-js', 'build-css', 'concat-components'], function() {
-    var target = gulp.src('main.html');
+    var target = gulp.src('public/main.html');
     var sources = gulp.src(['public/build/components/components.js',minifiedJavascriptsPath + '/**/*.js'], {
         read: false
     });
