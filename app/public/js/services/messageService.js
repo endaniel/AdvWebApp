@@ -7,15 +7,15 @@
 
         this.getAllMessageDisplayRelations = function () {
             return $http.get('messageDisplayRelation');
-        }
+        };
 
         this.removeMessageDisplayRelation = function(messageDisplayRelation){
-            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/"$pull"')
+            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/' + "pull" + '/' + "")
         };
 
         this.addMessageDisplayRelation = function(messageDisplayRelation){
-            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/"$push"')
-        }
+            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/' + "push" + '/' + "")
+        };
 
         this.get = function (id) {
             return Restangular.one('api/message',id).get();

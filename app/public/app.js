@@ -32,8 +32,8 @@
                     }
                 }
             })
-            .otherwise({
-                templateUrl:'views/home.html'
-            });
+            //.otherwise({
+            //    templateUrl:'views/home.html'
+            //});
     })
 })();

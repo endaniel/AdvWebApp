@@ -173,12 +173,21 @@ app.get('/messageDisplayRelation', function(req, res){
     })
 });
 
-app.put('/messageDisplayRelation/:messageId/:stationId/:action/', function(req, res){
-    var stationId = +req.params.stationId;
+app.put('/messageDisplayRelation/:messageId/:stationId/:actionType', function(req, res){
     var messageId = +req.params.messageId;
-    var action = req.params.action
-    if(!isNaN(stationId) && !isNaN(messageId)){
-        db.collection("messages").update({'id': messageId}, { action : { "displayStationIds" : stationId} }, function(err, docs){
+    var stationId = +req.params.stationId;
+    var action = req.params.actionType;
+
+    if(action === "push"){
+        db.collection("messages").update({'id': messageId}, { $push : { "displayStationIds" : stationId} }, function(err, docs){
+            if(err){
+                res.error("failed getting messages");
+            }
+            return res.json({messageId: messageId, stationId: stationId});
+        });
+    }
+    if(action === "pull"){
+        db.collection("messages").update({'id': messageId}, { $pull : { "displayStationIds" : stationId} }, function(err, docs){
             if(err){
                 res.error("failed getting messages");
             }
@@ -186,18 +195,7 @@ app.put('/messageDisplayRelation/:messageId/:stationId/:action/', function(req, 
         });
     }
 });
-//
-//app.post('/messageDisplayRelation/:messageId/:stationId', function(req, res){
-//    var stationId = +req.params.stationId;
-//    var messageId = +req.params.messageId;
-//
-//    db.collection("messages").update({'id': messageId}, { $push: { "displayStationIds" : stationId} }, function(err, docs){
-//        if(err){
-//            res.error("failed getting messages");
-//        }
-//        return res.json({messageId: messageId, stationId: stationId});
-//    });
-//});
+
 
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});
