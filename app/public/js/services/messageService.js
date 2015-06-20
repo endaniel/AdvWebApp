@@ -2,12 +2,20 @@
     "use strict";
     function messageService($http,Restangular){
         this.getAll = function(){
-            return $http.get('/messages');
+            return $http.get('message');
         };
 
+        this.getAllMessageDisplayRelations = function () {
+            return $http.get('messageDisplayRelation');
+        }
+
         this.removeMessageDisplayRelation = function(messageDisplayRelation){
-            return $http.delete('message/' + messageDisplayRelation.messageId + '/displayStation/' + messageDisplayRelation.displayStationId, {data : messageDisplayRelation})
+            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/"$pull"')
         };
+
+        this.addMessageDisplayRelation = function(messageDisplayRelation){
+            return $http.put('messageDisplayRelation/' + messageDisplayRelation.messageId + '/' + messageDisplayRelation.displayStationId + '/"$push"')
+        }
 
         this.get = function (id) {
             return Restangular.one('api/message',id).get();
