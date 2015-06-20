@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb155e3c-dec5-43dc-8c10-bdcaf058359f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/app.js" afterPath="$PROJECT_DIR$/app/public/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/services/messageService.js" afterPath="$PROJECT_DIR$/app/public/js/services/messageService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/public/style/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/main.html" afterPath="$PROJECT_DIR$/app/public/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html" afterPath="$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js" afterPath="$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js" afterPath="$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/server.js" afterPath="$PROJECT_DIR$/app/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,25 +30,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="messagesForDisplaysGridCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js">
+      <file leaf-file-name="newMessageDisplayRelation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/views/newMessageDisplayRelation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="21" />
+              <caret line="182" column="20" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="20" />
               <folding>
-                <element signature="e#888#998#0" expanded="false" />
-                <element signature="e#1039#1107#0" expanded="false" />
+                <element signature="e#579#3538#0" expanded="false" />
+                <element signature="e#610#3528#0" expanded="false" />
+                <element signature="e#665#3328#0" expanded="false" />
+                <element signature="e#686#1208#0" expanded="false" />
+                <element signature="e#1229#1782#0" expanded="false" />
+                <element signature="e#1803#2270#0" expanded="false" />
+                <element signature="e#2291#2760#0" expanded="false" />
+                <element signature="e#2781#3327#0" expanded="false" />
+                <element signature="e#3351#3496#0" expanded="false" />
+                <element signature="e#3384#3475#0" expanded="false" />
+                <element signature="e#3748#4031#0" expanded="false" />
+                <element signature="e#3774#3835#0" expanded="false" />
+                <element signature="e#3861#3922#0" expanded="false" />
+                <element signature="e#3948#4009#0" expanded="false" />
+                <element signature="e#4054#4203#0" expanded="false" />
+                <element signature="e#4088#4181#0" expanded="false" />
+                <element signature="e#4430#4484#0" expanded="false" />
+                <element signature="e#4527#4711#0" expanded="false" />
+                <element signature="e#4617#4678#0" expanded="false" />
+                <element signature="e#4753#4930#0" expanded="false" />
+                <element signature="e#4819#4927#0" expanded="false" />
+                <element signature="e#4836#4897#0" expanded="false" />
+                <element signature="e#4980#5106#0" expanded="false" />
+                <element signature="e#5071#5102#0" expanded="false" />
+                <element signature="e#5317#5354#0" expanded="false" />
+                <element signature="e#5405#5696#0" expanded="false" />
+                <element signature="e#5496#5692#0" expanded="false" />
+                <element signature="e#5638#5684#0" expanded="false" />
+                <element signature="e#5836#5897#0" expanded="false" />
+                <element signature="e#5959#6250#0" expanded="false" />
+                <element signature="e#6033#6239#0" expanded="false" />
+                <element signature="e#6061#6224#0" expanded="false" />
+                <element signature="e#7281#7354#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messagesForDisplaysGrid.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html">
+      <file leaf-file-name="newMessageDisplayRelationCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05743243">
-              <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="20" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messagesForDisplaysGridCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3167702">
+              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+              <folding>
+                <element signature="e#1006#1074#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,6 +114,7 @@
         <option value="package_json" />
         <option value="Html5" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -99,15 +154,16 @@
         <option value="$PROJECT_DIR$/app/public/templates/messageDisplayRelationOptions.html" />
         <option value="$PROJECT_DIR$/app/public/js/controllers/messageDisplayRelationOptions.html" />
         <option value="$PROJECT_DIR$/app/public/views/home.html" />
-        <option value="$PROJECT_DIR$/app/public/main.html" />
         <option value="$PROJECT_DIR$/app/public/js/services/stationService.js" />
         <option value="$PROJECT_DIR$/app/public/views/newMessageDisplayRelation.html" />
-        <option value="$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js" />
         <option value="$PROJECT_DIR$/app/public/app.js" />
         <option value="$PROJECT_DIR$/app/public/js/services/messageService.js" />
+        <option value="$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html" />
+        <option value="$PROJECT_DIR$/app/public/main.html" />
+        <option value="$PROJECT_DIR$/app/public/style/main.css" />
+        <option value="$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js" />
         <option value="$PROJECT_DIR$/app/server.js" />
         <option value="$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js" />
-        <option value="$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html" />
       </list>
     </option>
   </component>
@@ -229,28 +285,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ex2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdvWebApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -297,6 +331,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -398,7 +433,7 @@
     <option name="totallyTimeSpent" value="70830000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -473,13 +508,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/server.js</url>
-          <line>178</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager>
@@ -500,13 +528,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -544,8 +565,7 @@
             <element signature="e#5959#6250#0" expanded="false" />
             <element signature="e#6033#6239#0" expanded="false" />
             <element signature="e#6061#6224#0" expanded="false" />
-            <element signature="e#6376#7182#0" expanded="false" />
-            <element signature="e#7218#7291#0" expanded="false" />
+            <element signature="e#7281#7354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,8 +614,7 @@
             <element signature="e#5959#6250#0" expanded="false" />
             <element signature="e#6033#6239#0" expanded="false" />
             <element signature="e#6061#6224#0" expanded="false" />
-            <element signature="e#6376#7182#0" expanded="false" />
-            <element signature="e#7218#7291#0" expanded="false" />
+            <element signature="e#7281#7354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -658,8 +677,7 @@
             <element signature="e#5959#6250#0" expanded="false" />
             <element signature="e#6033#6239#0" expanded="false" />
             <element signature="e#6061#6224#0" expanded="false" />
-            <element signature="e#6376#7182#0" expanded="false" />
-            <element signature="e#7218#7291#0" expanded="false" />
+            <element signature="e#7281#7354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -715,8 +733,7 @@
             <element signature="e#5959#6250#0" expanded="false" />
             <element signature="e#6033#6239#0" expanded="false" />
             <element signature="e#6061#6224#0" expanded="false" />
-            <element signature="e#6376#7182#0" expanded="false" />
-            <element signature="e#7218#7291#0" expanded="false" />
+            <element signature="e#7281#7354#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -896,26 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/lib/ui-grid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3315508">
-          <caret line="2636" column="9" selection-start-line="2636" selection-start-column="9" selection-end-line="2636" selection-end-column="9" />
-          <folding>
-            <marker date="1434552575614" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434552575614" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434552575614" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/controllers/mainCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30722892">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README!!.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.085213035">
@@ -928,46 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="51" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63071895">
-          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/services/stationService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30722892">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/newMessageDisplayRelation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="114" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1583851">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -988,10 +945,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4254658">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.084367245">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/lib/ui-grid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27946126">
+          <caret line="2207" column="24" selection-start-line="2207" selection-start-column="8" selection-end-line="2207" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3445946">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/views/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05743243">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/services/stationService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21118012">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3783784">
+          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/controllers/mainCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3167702">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/js/controllers/newMessageDisplayRelationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2901024">
-          <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="20" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="20" />
           <folding>
             <element signature="e#579#3538#0" expanded="false" />
             <element signature="e#610#3528#0" expanded="false" />
@@ -1025,36 +1054,26 @@
             <element signature="e#5959#6250#0" expanded="false" />
             <element signature="e#6033#6239#0" expanded="false" />
             <element signature="e#6061#6224#0" expanded="false" />
-            <element signature="e#6376#7182#0" expanded="false" />
-            <element signature="e#7218#7291#0" expanded="false" />
+            <element signature="e#7281#7354#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/app.js">
+    <entry file="file://$PROJECT_DIR$/app/public/views/newMessageDisplayRelation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4254658">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/controllers/messagesForDisplaysGridCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.3167702">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           <folding>
-            <element signature="e#888#998#0" expanded="false" />
-            <element signature="e#1039#1107#0" expanded="false" />
+            <element signature="e#1006#1074#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/messagesForDisplaysGrid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05743243">
-          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>

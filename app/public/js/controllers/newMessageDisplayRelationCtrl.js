@@ -17,7 +17,7 @@
                         $location.path('/messagesForDisplays');
                     })
                     .error(function () {
-                        //$location.path('/messagesForDisplays');
+                        alert('failed creating new relation!')
                     })
             }
             else{

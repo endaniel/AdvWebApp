@@ -173,25 +173,25 @@ app.get('/messageDisplayRelation', function(req, res){
     })
 });
 
-app.put('/messageDisplayRelation/:messageId/:stationId/:actionType', function(req, res){
+app.put('/messageDisplayRelation/:messageId/:displayStationId/:actionType', function(req, res){
     var messageId = +req.params.messageId;
-    var stationId = +req.params.stationId;
+    var displayStationId = +req.params.displayStationId;
     var action = req.params.actionType;
 
     if(action === "push"){
-        db.collection("messages").update({'id': messageId}, { $push : { "displayStationIds" : stationId} }, function(err, docs){
+        db.collection("messages").update({'id': messageId}, { $push : { "displayStationIds" : displayStationId} }, function(err, docs){
             if(err){
                 res.error("failed getting messages");
             }
-            return res.json({messageId: messageId, stationId: stationId});
+            return res.json({messageId: messageId, displayStationId: displayStationId});
         });
     }
     if(action === "pull"){
-        db.collection("messages").update({'id': messageId}, { $pull : { "displayStationIds" : stationId} }, function(err, docs){
+        db.collection("messages").update({'id': messageId}, { $pull : { "displayStationIds" : displayStationId} }, function(err, docs){
             if(err){
                 res.error("failed getting messages");
             }
-            return res.json({messageId: messageId, stationId: stationId});
+            return res.json({messageId: messageId, displayStationId: displayStationId});
         });
     }
 });

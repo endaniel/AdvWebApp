@@ -1,5 +1,12 @@
-<input ng-model="searchedDisplayStation" ng-change="filter()" placeholder="Search display station...">
-<input ng-model="searchedMessage" ng-change="filter()" placeholder="Search message...">
+<div layout="column">
+    <button id="addBtn" type="button" class="btn-small"><a href="newMessageDisplayRelation">Create</a></button>
+    <input ng-model="searchedDisplayStation" ng-change="filter()" placeholder="Search display station...">
+    <input ng-model="searchedMessage" ng-change="filter()" placeholder="Search message...">
+</div>
+
 <div layout="row" ui-grid="gridOptions" external-scopes="gridScope">
+
+</div>
+<div>
 
 </div>
