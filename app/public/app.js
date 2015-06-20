@@ -32,8 +32,12 @@
                     }
                 }
             })
-            //.otherwise({
-            //    templateUrl:'views/home.html'
-            //});
+            .when('/displayStationsAndTemplates',{
+                templateUrl: 'views/displayStationsAndTemplatesManagement.html',
+                controller: 'displayStationsAndTemplatesManagementCtrl'
+            })
+            .otherwise({
+                templateUrl:'views/home.html'
+            });
     })
 })();

@@ -119,6 +119,18 @@ app.get('/station', function(req, res){
     })
 });
 
+app.delete('/station/:id', function (req, res) {
+    var displayStationIdToDelete = +req.params.id;
+
+    db.collection("messages").update({ $pull : { "displayStationIds" : displayStationId} }, function(err, docs){
+        if(err){
+            res.error("failed getting messages");
+        }
+        return res.json({messageId: messageId, displayStationId: displayStationId});
+        //TODO - Delete displayStationId in messages!!
+    });
+})
+
 app.get('/message', function(req, res){
     db.collection("messages").find().toArray(function(err, docs){
         if(err){
