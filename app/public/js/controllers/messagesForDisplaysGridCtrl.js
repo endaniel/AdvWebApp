@@ -1,38 +1,52 @@
 (function(){
     "use strict";
-    function messagesForDisplaysGridCtrl($scope, allMessages, messageService){
-        $scope.gridData = getDataForDisplay(allMessages.data);
+    function messagesForDisplaysGridCtrl($scope, messageDisplayRelations, messageService, uiGridConstants, $filter){
+        var self = this;
+        $scope.searchedDisplayStation = "";
+        $scope.searchedMessage = "";
+
+        $scope.gridData = messageDisplayRelations.data;
         $scope.gridScope = {
             deleteRelation: function(messageDisplayRelation){
                 messageService.removeMessageDisplayRelation(messageDisplayRelation)
-                    .success(function(){
-                        //TODO - remove from grid
+                    .success(function(deletedRelation){
+                        messageDisplayRelations.data = _.reject(messageDisplayRelations.data, function (relation) {
+                            return relation.messageId === deletedRelation.messageId &&
+                                    relation.displayStationId == deletedRelation.displayStationId;
+                        })
+
+                        $scope.gridData = messageDisplayRelations.data;
+                    })
+                    .error(function () {
+                        console.log("error")
                     })
             }
-        }
+        };
         $scope.gridOptions = {
+            enableFiltering: true,
+            enableScrollbars: false,
             data:'gridData',
             columnDefs:[
-                {field: 'messageId', displayName: 'Message Id'},
+                {field: 'messageId', displayName: 'Message Id', enableFiltering: true},
                 {field: 'displayStationId', displayName: 'Stations Id'},
-                {name: 'delete', displayName: '', cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>'}
-            ],
-        }
-    }
+                {name: 'options', displayName: 'Options',
+                    cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>', enableFiltering: false}
+            ]
+        };
 
-    var getDataForDisplay = function(messages){
-        var data = []
-        _.each(messages, function(message){
-            _.each(message.displayStationIds, function(displayStationId){
-                data.push({
-                    messageDbId: message._id,
-                    messageId: message.id,
-                    displayStationId: displayStationId
-                })
-            })
-        })
+        $scope.filter = function(){
+            $scope.gridData = messageDisplayRelations.data;
+            self.filterByDisplayStation();
+            self.filterByMessage();
+        };
 
-        return data;
+        self.filterByDisplayStation = function() {
+            $scope.gridData = $filter('filter')($scope.gridData, {'displayStationId': $scope.searchedDisplayStation}, undefined);
+        };
+
+        self.filterByMessage = function() {
+            $scope.gridData = $filter('filter')($scope.gridData, {'messageId': $scope.searchedMessage}, undefined);
+        };
     }
-    angular.module('app').controller('messagesForDisplaysGridCtrl', ['$scope', 'allMessages', 'messageService', messagesForDisplaysGridCtrl])
+    angular.module('app').controller('messagesForDisplaysGridCtrl', ['$scope', 'messageDisplayRelations', 'messageService', 'uiGridConstants', '$filter', messagesForDisplaysGridCtrl])
 })();

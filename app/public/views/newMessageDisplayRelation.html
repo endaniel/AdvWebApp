@@ -1,0 +1,13 @@
+<div layout="column">
+    <div layout="row">
+        <label flex flex-order="1">הודעה</label>
+        <select flex flex-order="2" ng-model="newRelation.message" ng-options="message.id for message in messages"></select>
+    </div>
+    <div layout="row">
+        <label flex flex-order="1">תחנה</label>
+        <select flex flex-order="2" ng-model="newRelation.station" ng-options="station.id for station in stations"></select>
+    </div>
+    <div layout="row">
+        <button ng-click="create()">Create</button>
+    </div>
+</div>

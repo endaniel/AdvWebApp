@@ -10,8 +10,8 @@
                 templateUrl: 'views/messagesForDisplaysGrid.html',
                 controller: 'messagesForDisplaysGridCtrl',
                 resolve:{
-                    allMessages: function(messageService){
-                        return messageService.getAll();
+                    messageDisplayRelations: function(messageService){
+                        return messageService.getAllMessageDisplayRelations();
                     }
                 }
             })
@@ -19,6 +19,22 @@
                 templateUrl: 'views/message.html',
                 controller: 'messageForEditCtrl',
                 controllerAs:'messageEditor'
+            })
+            .when('/newMessageDisplayRelation',{
+                templateUrl: 'views/newMessageDisplayRelation.html',
+                controller: 'newMessageDisplayRelationCtrl',
+                resolve:{
+                    messages: function(messageService){
+                        return messageService.getAll();
+                    },
+                    stations: function(stationService){
+                        return stationService.getAll();
+                    }
+                }
+            })
+            .when('/displayStationsAndTemplates',{
+                templateUrl: 'views/displayStationsAndTemplatesManagement.html',
+                controller: 'displayStationsAndTemplatesManagementCtrl'
             })
             .otherwise({
                 templateUrl:'views/home.html'

@@ -6,7 +6,8 @@ var MongoClient = mongodb.MongoClient;
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var _ = require('underscore');
 var db = {};
 
 MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
@@ -75,6 +76,28 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
             }
         });
 
+    db.collection("system.namespaces").find({name: "test.displayStations"}).toArray(
+        function(err, docs) {
+            if(!docs.length) {
+                db.collection('displayStations').insertMany([
+                        {
+                            id: 1
+                        },
+                        {
+                            id: 2
+                        },
+                        {
+                            id: 3
+                        }
+                    ], function(err, result){
+                        if(!err){
+                            console.log("inserted successfully");
+                        }
+                    }
+                )
+            }
+        });
+
     server.listen(3000);
     console.log("listening on port 3000");
 });
@@ -86,18 +109,29 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/main.html');
 });
 
-app.get('/stationId/:stationId', function(req, res){
-    var stationId = +req.params.stationId;
-    res.header('Access-Control-Allow-Origin', '*');
-    db.collection("messages").find({"displayStationIds": stationId}).toArray(function(err, docs){
+
+app.get('/station', function(req, res){
+    db.collection("displayStations").find().toArray(function(err, docs){
         if(err){
             res.error("failed getting messages");
         }
-        res.json(docs)
+        res.json(docs);
     })
 });
 
-app.get('/messages', function(req, res){
+app.delete('/station/:id', function (req, res) {
+    var displayStationIdToDelete = +req.params.id;
+
+    db.collection("messages").update({ $pull : { "displayStationIds" : displayStationId} }, function(err, docs){
+        if(err){
+            res.error("failed getting messages");
+        }
+        return res.json({messageId: messageId, displayStationId: displayStationId});
+        //TODO - Delete displayStationId in messages!!!
+    });
+})
+
+app.get('/message', function(req, res){
     db.collection("messages").find().toArray(function(err, docs){
         if(err){
             res.error("failed getting messages");
@@ -130,39 +164,51 @@ app.post('/api/message', function(req, res){
     });
 });
 
+app.get('/messageDisplayRelation', function(req, res){
+    db.collection("messages").find().toArray(function(err, docs){
+        if(err){
+            res.error("failed getting messages");
+        }
+
+        var data = []
+        _.each(docs, function(message){
+            _.each(message.displayStationIds, function(displayStationId){
+                data.push({
+                    messageDbId: message._id,
+                    messageId: message.id,
+                    displayStationId: displayStationId
+                })
+            })
+        })
+
+        res.json(data);
+    })
+});
+
+app.put('/messageDisplayRelation/:messageId/:displayStationId/:actionType', function(req, res){
+    var messageId = +req.params.messageId;
+    var displayStationId = +req.params.displayStationId;
+    var action = req.params.actionType;
+
+    if(action === "push"){
+        db.collection("messages").update({'id': messageId}, { $push : { "displayStationIds" : displayStationId} }, function(err, docs){
+            if(err){
+                res.error("failed getting messages");
+            }
+            return res.json({messageId: messageId, displayStationId: displayStationId});
+        });
+    }
+    if(action === "pull"){
+        db.collection("messages").update({'id': messageId}, { $pull : { "displayStationIds" : displayStationId} }, function(err, docs){
+            if(err){
+                res.error("failed getting messages");
+            }
+            return res.json({messageId: messageId, displayStationId: displayStationId});
+        });
+    }
+});
+
+
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});
-});
-
-app.delete('message/:messageId/displayStation/:stationId', function(req, res){
-    var stationId = +req.params.stationId;
-    var messageId = +req.params.messageId;
-    //db.collection("messages").find({"displayStationIds": stationId}).toArray(function(err, docs){
-    //    if(err){
-    //        res.error("failed getting messages");
-    //    }
-    //    res.json(docs)
-    //})
-
-    db.collection("messages").update({'id': messageId}, { $pull: { "displayStationIds" : stationId} }, function(err, result){
-        if(err){
-            res.error("failed getting messages");
-        }
-        res.ok(result)
-    });
-});
-
-app.put('/TestUpdate/:stationId', function (req, res) {
-    var stationId = +req.params.stationId;
-    res.header('Access-Control-Allow-Origin', '*');
-    db.collection("messages").find({"displayStationIds": stationId}).toArray(function(err, docs){
-        if(err){
-            res.error("failed getting messages");
-        }
-        io.emit('messageChanged', docs);
-    });
-});
-
-io.on('connection', function(socket){
-    console.log('a user connected');
 });
