@@ -13,5 +13,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-file-upload": "~1.1.5",
+    "angular-carousel": "~0.3.12"
+  }
 }

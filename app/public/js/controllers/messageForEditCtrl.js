@@ -1,8 +1,11 @@
 (function(){
     "use strict";
-    function messageForEditCtrl(messageService,$route,$routeParams){
+    function messageForEditCtrl(messageService,$route,$routeParams,FileUploader){
         var self = this;
         var messageId = $routeParams.id;
+        self.uploader = new FileUploader();
+        self.uploader.queueLimit = 5;
+
         if(messageId == 0 || messageId == undefined){
             self.message = { id: 0};
         } else{
@@ -26,5 +29,5 @@
             }
         }
     }
-    angular.module('app').controller('messageForEditCtrl', ['messageService', '$route','$routeParams',messageForEditCtrl])
+    angular.module('app').controller('messageForEditCtrl', ['messageService', '$route','$routeParams','FileUploader',messageForEditCtrl])
 })();

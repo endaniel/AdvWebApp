@@ -50,7 +50,15 @@
         </div>
         <div layout="row">
             <label flex flex-order="1">הוספת תמונה</label>
-            <input type="image" flex flex-order="2" ng-model="messageEditor.message.picture[0]">
+            <input type="file" nv-file-select uploader="messageEditor.uploader" flex flex-order="2" multiple/>
+
+            <ul class="image">
+                <li ng-repeat="image in messageEditor.uploader.queue">
+                    {{messageEditor.uploader.isHTML5}}
+                    <div ng-show="messageEditor.uploader.isHTML5" ng-thumb="{ file: image._file, height: 100 }"></div>
+                    <div class="layer">{{ image._file.name }}</div>
+                </li>
+            </ul>
         </div>
         <div layout="row">
             <label flex flex-order="1">בחירת תבנית תצוגה </label>
