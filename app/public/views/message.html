@@ -1,72 +1,95 @@
 <form name="messageForm" ng-submit="messageEditor.save(messageForm)" layout="column" layout-align="center center">
     <div layout="column">
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">שם הודעה</label>
-            <input type="text" flex flex-order="2" ng-model="messageEditor.message.name">
+            <input name="name" type="text" flex flex-order="2" ng-model="messageEditor.message.name" required>
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">אורך הודעה</label>
-            <input type="number" flex flex-order="2" ng-model="messageEditor.message.time">
+            <input type="number" flex flex-order="2" ng-model="messageEditor.message.time" min="0">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה ראשונה</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[0]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה שניה</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[1]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה שלישית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[2]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה רביעית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[3]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה חמישית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[4]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה שישית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[5]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה שביעית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[6]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה שמינית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[7]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה תשיעית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[8]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הודעה עשירית</label>
             <input type="text" flex flex-order="2" ng-model="messageEditor.message.text[9]">
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">הוספת תמונה</label>
             <input type="file" nv-file-select uploader="messageEditor.uploader" flex flex-order="2" multiple/>
 
             <ul class="image">
                 <li ng-repeat="image in messageEditor.uploader.queue">
-                    {{messageEditor.uploader.isHTML5}}
                     <div ng-show="messageEditor.uploader.isHTML5" ng-thumb="{ file: image._file, height: 100 }"></div>
-                    <div class="layer">{{ image._file.name }}</div>
                 </li>
             </ul>
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">בחירת תבנית תצוגה </label>
-            <input type="text" flex flex-order="2" ng-model="messageEditor.message.template">
+            <input type="text" flex flex-order="2" ng-model="messageEditor.message.template" required>
         </div>
-        <div layout="row">
+        <div layout="row" class="space-top">
             <label flex flex-order="1">קביעת מסגרת זמנים</label>
-            <input type="text" flex flex-order="2">
+            <button flex flex-order="2" type="button" ng-click="messageEditor.addFrame()"> הוספה</button>
+        </div>
+        <div layout="column" ng-repeat="frame in messageEditor.message.timeFrames">
+            <div layout="row" flex flex-order="1">
+                <label flex flex-order="1">זמן מ</label>
+                <input flex flex-order="2" type="date" ng-model="frame.dateFrom">
+            </div>
+            <div layout="row" flex flex-order="2">
+                <label flex flex-order="1">זמן עד</label>
+                <input flex flex-order="2" type="date" ng-model="frame.dateTo">
+            </div>
+            <ui-select flex flex-order="3" multiple  ng-model="frame.dayOfTheWeek" theme="bootstrap">
+                <ui-select-match placeholder="Select days of the week">{{$item}}</ui-select-match>
+                <ui-select-choices repeat="item in messageEditor.days">
+                    <div>{{item}}</div>
+                </ui-select-choices>
+            </ui-select>
+            <div layout="row" flex flex-order="4">
+                <label flex flex-order="1">שעה ביום מ</label>
+                <input flex flex-order="2" type="time" ng-model="frame.timeOfDayFrom">
+            </div>
+            <div layout="row" flex flex-order="5">
+                <label flex flex-order="1">שעה ביום עד</label>
+                <input flex flex-order="2" type="time" ng-model="frame.timeOfDayTo">
+            </div>
+            <button flex flex-order="6" ng-click="messageEditor.removeFrame($index)" >מחיקה</button>
         </div>
         <md-button >שמור</md-button>
     </div>
