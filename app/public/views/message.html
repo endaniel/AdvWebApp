@@ -51,10 +51,11 @@
         <div layout="row" class="space-top">
             <label flex flex-order="1">הוספת תמונה</label>
             <input type="file" nv-file-select uploader="messageEditor.uploader" flex flex-order="2" multiple/>
-
-            <ul class="image">
+        </div>
+        <div layout="row" layout-align="center center" class="space-top">
+            <ul flex="30"  rn-carousel class="image" style="height: 100px; border: 5px solid;border-radius: 25px;">
                 <li ng-repeat="image in messageEditor.uploader.queue">
-                    <div ng-show="messageEditor.uploader.isHTML5" ng-thumb="{ file: image._file, height: 100 }"></div>
+                    <div ng-show="messageEditor.uploader.isHTML5" ng-thumb="{ file: image._file, height: 100 ,width:100}"></div>
                 </li>
             </ul>
         </div>
