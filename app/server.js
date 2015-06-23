@@ -113,21 +113,54 @@ app.get('/', function(req, res){
 app.get('/station', function(req, res){
     db.collection("displayStations").find().toArray(function(err, docs){
         if(err){
-            res.error("failed getting messages");
+            res.error("failed getting stations");
         }
         res.json(docs);
+    })
+});
+
+app.put('/station', function(req, res){
+    db.collection("displayStations").find().sort({id : -1}).limit(1).toArray(function (err, docs) {
+        if(err){
+            res.error("failed creating station");
+        }
+        else{
+            if(docs.length === 0){
+                var newStationId = 1;
+            }
+            else{
+                var newStationId = docs[0].id + 1;
+            }
+            db.collection("displayStations").insert({id: newStationId}, function (err, doc) {
+                if(err){
+                    res.error("failed creating station");
+                }
+                else{
+                    res.json(doc.ops[0]);
+                }
+            })
+        }
+
     })
 });
 
 app.delete('/station/:id', function (req, res) {
     var displayStationIdToDelete = +req.params.id;
 
-    db.collection("messages").update({ $pull : { "displayStationIds" : displayStationId} }, function(err, docs){
+    db.collection("messages").update({displayStationIds: {$in: [displayStationIdToDelete]}}, { $pull : { "displayStationIds" : displayStationIdToDelete} }, { multi: true }, function(err, docs){
         if(err){
-            res.error("failed getting messages");
+            res.error("failed deleting display station fk");
         }
-        return res.json({messageId: messageId, displayStationId: displayStationId});
-        //TODO - Delete displayStationId in messages!!!
+        else{
+            db.collection("displayStations").remove({id: displayStationIdToDelete}, function (err, doc) {
+                if(err){
+                    res.error("failed deleting display station");
+                }
+                else{
+                    return res.json(displayStationIdToDelete);
+                }
+            })
+        }
     });
 })
 
@@ -191,7 +224,7 @@ app.put('/messageDisplayRelation/:messageId/:displayStationId/:actionType', func
     var action = req.params.actionType;
 
     if(action === "push"){
-        db.collection("messages").update({'id': messageId}, { $push : { "displayStationIds" : displayStationId} }, function(err, docs){
+        db.collection("messages").update({'id': messageId}, { $addToSet : { "displayStationIds" : displayStationId} }, function(err, docs){
             if(err){
                 res.error("failed getting messages");
             }

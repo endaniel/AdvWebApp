@@ -5,11 +5,11 @@
         }
 
         this.delete = function (displayStationId) {
-            return $http.delete('/station/' + displayStationId)
+            return $http.delete('/station/' + displayStationId.id)
         }
 
-        this.add = function(){
-            //TODO!!!!
+        this.create = function(){
+            return $http.put('/station');
         }
     }
     angular.module('app').service('stationService',['$http', stationService])
