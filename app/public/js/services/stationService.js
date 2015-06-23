@@ -8,8 +8,8 @@
             return $http.delete('/station/' + displayStationId.id)
         }
 
-        this.create = function(){
-            return $http.put('/station');
+        this.create = function(displayStationAddress){
+            return $http.put('/station/' + displayStationAddress);
         }
     }
     angular.module('app').service('stationService',['$http', stationService])

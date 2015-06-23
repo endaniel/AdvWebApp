@@ -1,6 +1,7 @@
 (function () {
     "use strict";
-    function displayStationsAndTemplatesManagementCtrl($scope, stationService){
+    function displayStationsManagementCtrl($scope, stationService){
+        $scope.displayStationAddress = "";
         stationService.getAll().success(function (stations) {
             $scope.gridData = stations;
         })
@@ -30,12 +31,18 @@
         };
 
         $scope.create = function () {
-            stationService.create()
-                .then(function (newDisplayStation) {
-                    $scope.gridData.push(newDisplayStation.data);
-                })
+            if(!$scope.displayStationAddress){
+                alert("please define display station address")
+            }
+            else{
+                stationService.create($scope.displayStationAddress)
+                    .then(function (newDisplayStation) {
+                        $scope.gridData.push(newDisplayStation.data);
+                        $scope.displayStationAddress = "";
+                    })
+            }
         }
     }
 
-    angular.module('app').controller('displayStationsAndTemplatesManagementCtrl', ['$scope', 'stationService', displayStationsAndTemplatesManagementCtrl])
+    angular.module('app').controller('displayStationsManagementCtrl', ['$scope', 'stationService', displayStationsManagementCtrl])
 })();

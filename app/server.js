@@ -119,7 +119,7 @@ app.get('/station', function(req, res){
     })
 });
 
-app.put('/station', function(req, res){
+app.put('/station/:displayStationAddress', function(req, res){
     db.collection("displayStations").find().sort({id : -1}).limit(1).toArray(function (err, docs) {
         if(err){
             res.error("failed creating station");
@@ -131,7 +131,7 @@ app.put('/station', function(req, res){
             else{
                 var newStationId = docs[0].id + 1;
             }
-            db.collection("displayStations").insert({id: newStationId}, function (err, doc) {
+            db.collection("displayStations").insert({id: newStationId, address: req.params.displayStationAddress}, function (err, doc) {
                 if(err){
                     res.error("failed creating station");
                 }

@@ -1,7 +1,7 @@
 <div layout="column">
     <div layout="row">
         <button id="addBtn" type="button" class="btn-small" ng-click="create()">Create</button>
-        <input type="text" placeholder="display station address">
+        <input type="text" ng-model="displayStationAddress" placeholder="display station address">
     </div>
 </div>
 <div layout="row" ui-grid="gridOptions" external-scopes="gridScope"/>
