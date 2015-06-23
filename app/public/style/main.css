@@ -1,3 +1,7 @@
 .ui-grid-header-cell {
     height: 20% !important;
 }
+
+.space-top {
+    margin-top: 10px;
+}
