@@ -60,7 +60,8 @@
             </ul>
         </div>
         <div layout="row" class="space-top">
-            <input type="text" flex flex-order="2" ng-model="messageEditor.message.template" required>
+            <select flex flex-order="2" ng-model="messageEditor.message.template" ng-options="template.name for template in messageEditor.allTemplates"></select>
+            <!--<input type="text" flex flex-order="2" ng-model="messageEditor.message.template" required>-->
             <label flex flex-order="1"> choose template </label>
         </div>
         <div layout="row" class="space-top">

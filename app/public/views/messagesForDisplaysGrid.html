@@ -1,5 +1,6 @@
 <div layout="column">
-    <button id="addBtn" type="button" class="btn-small"><a href="newMessageDisplayRelation">Create</a></button>
+    <button ng-click="directToMessageCreation()">Create new message</button>
+    <button ng-click="directToNewRelation()">Connect Message to display</button>
     <input ng-model="searchedDisplayStation" ng-change="filter()" placeholder="Search display station...">
     <input ng-model="searchedMessage" ng-change="filter()" placeholder="Search message...">
 </div>
