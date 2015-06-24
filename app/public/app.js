@@ -32,9 +32,9 @@
                     }
                 }
             })
-            .when('/displayStationsAndTemplates',{
-                templateUrl: 'views/displayStationsAndTemplatesManagement.html',
-                controller: 'displayStationsAndTemplatesManagementCtrl'
+            .when('/displayStations',{
+                templateUrl: 'views/displayStationsManagement.html',
+                controller: 'displayStationsManagementCtrl'
             })
             .when('/showMessageByDateTime',{
                 templateUrl: 'views/showMessageByDateTime.html',
