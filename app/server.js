@@ -301,7 +301,7 @@ app.get('/screensPerMessage', function(req, res){
             })
             var messagesWithNumOfDisplays = _.map(messagesWithDisplay, function (message) {
                 return {name: message.name, count: message.displayStationIds.length}
-            })
+            });
             res.json(messagesWithNumOfDisplays)
         }
     })

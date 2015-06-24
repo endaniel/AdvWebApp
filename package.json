@@ -22,7 +22,8 @@
     "lodash": "^2.4.1",
     "mongodb": "*",
     "underscore": "1.8.3",
-    "validator": "^3.27.0"
+    "validator": "^3.27.0",
+    "video.js": "^4.12.10"
   },
   "devDependencies": {}
 }

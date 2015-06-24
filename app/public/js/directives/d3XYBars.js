@@ -81,5 +81,5 @@
             }
         };
     };
-    angular.module('app').directive('d3XYBars', ['d3',d3XYBars])
+    angular.module('graphsApp').directive('d3XYBars', ['d3',d3XYBars])
 })();

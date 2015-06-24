@@ -1,10 +1,12 @@
 (function(){
-    var app = angular.module('app', ['ngRoute', 'ui.grid', 'd3', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular','angularFileUpload','angular-carousel','ui.select','screenApp']);
+    var app = angular.module('app', ['ngRoute', 'ui.grid', 'd3', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular',
+                                     'angularFileUpload','angular-carousel','ui.select','screenApp','graphsApp']);
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
         $routeProvider
             .when('/',{
-                templateUrl:'views/home.html'
+                templateUrl:'views/home.html',
+                controller: 'homeCtrl'
             })
             .when('/messagesForDisplays', {
                 templateUrl: 'views/messagesForDisplaysGrid.html',
@@ -58,9 +60,13 @@
             .when('/templates', {
                 templateUrl: 'views/templatesManagement.html',
                 controller: 'templatesManagementCtrl'
+            }).
+            when('/about',{
+                templateUrl: 'views/about.html'
             })
             .otherwise({
-                templateUrl:'views/home.html'
+                templateUrl:'views/home.html',
+                controller: 'homeCtrl'
             });
     })
 })();

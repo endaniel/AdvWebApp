@@ -15,7 +15,7 @@
         self.days = [1,2,3,4,5,6,7];
 
         if(messageId == 0 || messageId == undefined){
-            self.message = { id: 0, timeFrames:[]};
+            self.message = { id: 0, timeFrames:[],displayStationIds:[]};
         } else{
             messageService.get(messageId).then(function (message) {
                 self.message = message;

@@ -1,2 +1,1 @@
-taskkill /F /IM chrome.exe
-start chrome.exe --allow-file-access-from-files %CD%\public\main.html
+start chrome.exe http://localhost:3000/

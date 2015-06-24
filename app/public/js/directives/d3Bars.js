@@ -90,5 +90,5 @@
             }
         };
     };
-    angular.module('app').directive('d3Bars', ['d3',d3Bars])
+    angular.module('graphsApp').directive('d3Bars', ['d3',d3Bars])
 })();
