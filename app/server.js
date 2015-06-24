@@ -23,7 +23,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                 db.collection('messages').insertMany([
                    {
                        id: 1,
-                       name: 'guy',
+                       name: 'daniel',
                        text: ['first','second','third','forth'],
                        pictures: [],
                        template: 'templates/templateA.html',
@@ -43,7 +43,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 3,
-                       name: 'guy',
+                       name: 'eraninio',
                        text: [],
                        pictures: [],
                        template: 'templates/templateC.html',
@@ -63,7 +63,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                    },
                    {
                        id: 5,
-                       name: 'guy',
+                       name: 'eran',
                        text: ['first','second','third','forth','fifth','sixth','seventh'],
                        pictures: ['img/first.jpg','img/second.jpg'],
                        template: 'templates/templateB.html',
@@ -270,7 +270,7 @@ app.post('/data/file', multipartMiddleware,function(req,res) {
 
 app.get('/templatesUsage', function(req, res){
     db.collection("messages").aggregate([
-        {"$group" : {_id:"template", sum:{$sum:1}}}
+        {$group : {_id:"$template", count:{$sum: 1}}}
     ]).toArray(function (err, docs) {
         if(err){
             console.log("error getting group by")
@@ -280,6 +280,39 @@ app.get('/templatesUsage', function(req, res){
         }
     })
 });
+
+app.get('/screensPerMessage', function(req, res){
+    db.collection("messages").find().toArray(function (err, docs) {
+        if(err){
+            console.log("error getting group by")
+        }
+        else{
+            var messagesWithDisplay = _.filter(docs, function (message) {
+                return message.displayStationIds.length > 0 ;
+            })
+            var messagesWithNumOfDisplays = _.map(messagesWithDisplay, function (message) {
+                return {name: message.name, count: message.displayStationIds.length}
+            })
+            res.json(messagesWithNumOfDisplays)
+        }
+    })
+});
+
+app.get('/template', function(req, res){
+    fs.readdir("public/templates", function (err, files) {
+        if(err){
+            console.log("error reading templates names from directory");
+        }
+        else{
+            var fileNamesObjectArray = _.map(files, function (file) {
+                return {name: "templates/" + file};
+            })
+            res.json(fileNamesObjectArray);
+        }
+    })
+});
+
+app.d
 
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});
