@@ -106,12 +106,12 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
 });
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/main.html');
 });
-
 
 app.get('/station', function(req, res){
     db.collection("displayStations").find().toArray(function(err, docs){
@@ -316,8 +316,6 @@ app.get('/template', function(req, res){
         }
     })
 });
-
-app.d
 
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});

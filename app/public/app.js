@@ -55,6 +55,9 @@
             .when('/templates', {
                 templateUrl: 'views/templatesManagement.html',
                 controller: 'templatesManagementCtrl'
+            }).
+            when('/about',{
+                templateUrl: 'views/about.html'
             })
             .otherwise({
                 templateUrl:'views/home.html'

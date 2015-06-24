@@ -35,7 +35,42 @@
                 <a href="about" class="md-button md-default-theme">about</a>
             </md-sidenav>
             <div flex layout-align="column">
-                <div style="height: 90%"><ng-view flex ></ng-view></div>
+                <div style="height: 90%">
+                    <style>
+                        #canvas {
+                            margin-top: 5px;
+                            -webkit-box-shadow: rgba(1, 0, 0, 0.9) 2px 2px 4px;
+                            -moz-box-shadow: rgba(0, 0, 0, 0.9) 2px 2px 4px;
+                            box-shadow: rgba(0, 0, 0, 0.9) 2px 2px 4px;
+                            border: 1px solid lightgray;
+                            background: #abcdef;
+                            align-content: center;
+                            left: 5px;
+                            border-radius: 10px;
+                            transition: left 1s ease-in-out 0s;
+                        }
+                        #canvas:hover {
+                            left: 100px;
+                        }
+                        h3 {
+                            text-shadow: 2px 2px lightgray;
+                        }
+                        .newspaper {
+                            -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                            -moz-column-count: 2; /* Firefox */
+                            column-count: 2;
+                            -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+                            -moz-column-gap: 20px; /* Firefox */
+                            column-gap: 20px;
+                            font-size: 20px;
+                            width: 400px;
+                        }
+
+
+                    </style>
+
+                    <canvas style="margin-top: 50px" flex offset="5" id="canvas" width="270" height="65"></canvas><br>
+                    <ng-view flex ></ng-view></div>
                 <md-divider></md-divider>
                 <footer flex offset="45">
                     college of management web project
