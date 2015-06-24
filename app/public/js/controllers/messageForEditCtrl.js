@@ -1,13 +1,13 @@
 (function(){
     "use strict";
-    function messageForEditCtrl(messageService,$route,$routeParams,FileUploader){
+    function messageForEditCtrl(messageService, $route, $routeParams, FileUploader, templateService){
         var self = this;
         var messageId = $routeParams.id;
         self.uploader = new FileUploader();
         self.uploader.queueLimit = 5;
         self.uploader.url = 'data/file';
         self.uploader.autoUpload = true;
-
+        self.allTemplates = []
 
         self.uploader.onSuccessItem = function(fileItem, response, status, headers) {
             self.message.pictures.push('img/' +fileItem._file.name);
@@ -38,7 +38,9 @@
             }
         };
 
-
+        templateService.getAll().then(function (templates) {
+            self.allTemplates = templates.data;
+        });
 
         self.addFrame = function () {
             self.message.timeFrames.push( {dateFrom: '',dateTo: '', dayOfTheWeek: [], timeOfDayFrom: '', timeOfDayTo: '' });
@@ -48,5 +50,5 @@
             self.message.timeFrames.splice(i,1)
         };
     }
-    angular.module('app').controller('messageForEditCtrl', ['messageService', '$route','$routeParams','FileUploader',messageForEditCtrl])
+    angular.module('app').controller('messageForEditCtrl', ['messageService', '$route','$routeParams','FileUploader', 'templateService',messageForEditCtrl])
 })();
