@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    function mainCtrl(){
+    function homeCtrl(){
         function init() {
             var canvas = document.getElementById("canvas");
             if (canvas.getContext)
@@ -33,5 +33,5 @@
         init()
 
     }
-    angular.module('app').controller('mainCtrl', [mainCtrl])
+    angular.module('app').controller('homeCtrl', [homeCtrl])
 })();
