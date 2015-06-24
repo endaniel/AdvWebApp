@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('app', ['ngRoute', 'ui.grid', 'd3', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular','angularFileUpload','angular-carousel','ui.select']);
+    var app = angular.module('app', ['ngRoute', 'ui.grid', 'd3', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular','angularFileUpload','angular-carousel','ui.select','screenApp']);
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
         $routeProvider
