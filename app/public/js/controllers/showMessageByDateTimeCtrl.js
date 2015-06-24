@@ -26,10 +26,13 @@
         }
 
         function filterMessages(messages){
-            var validMessage = _.where(messages, function (message) {
-                return shouldShowMessage(message);
+            var validMessages = [];
+            _.each(messages, function (message) {
+                if (shouldShowMessage(message)){
+                    validMessages.push(message)
+                }
             });
-            return validMessage;
+            return validMessages;
         }
     }
     angular.module('app').controller('showMessageByDateTimeCtrl', ['stationService',showMessageByDateTimeCtrl])
