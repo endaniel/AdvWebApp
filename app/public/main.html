@@ -13,7 +13,7 @@
     <body layout="column" ng-controller="mainCtrl as main">
         <md-toolbar layout="row">
             <div class="md-toolbar-tools">
-                <h1>Screen's</h1>
+                <header><h1>Screen's</h1></header>
             </div>
         </md-toolbar>
         <div layout="row" flex>
@@ -24,9 +24,18 @@
                 <md-divider></md-divider>
                 <a href="displayStations" class="md-button md-default-theme">view4</a>
                 <md-divider></md-divider>
+                <a href="displayStation" class="md-button md-default-theme">show display screen 1</a>
+                <md-divider></md-divider>
                 <a href="about" class="md-button md-default-theme">about</a>
             </md-sidenav>
-            <ng-view flex></ng-view>
+            <div flex layout-align="column">
+                <div style="height: 90%"><ng-view flex ></ng-view></div>
+                <md-divider></md-divider>
+                <footer flex offset="45">
+                    college of management web project
+                </footer>
+            </div>
+
         </div>
 
         <script type="text/javascript" src="js/lib/angular.js"></script>
@@ -39,11 +48,12 @@
         <script type="text/javascript" src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
         <script type="text/javascript" src="bower_components/angular-file-upload/angular-file-upload.js"></script>
         <script type="text/javascript" src="bower_components/angular-ui-select/dist/select.js"></script>
+        <script type="text/javascript" src="js/lib/socket.io.js"></script>
+        <script type="text/javascript" src="screenApp.js"></script>
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="js/lib/ui-grid.js"></script>
         <script type="text/javascript" src="js/lib/jquery.js"></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
-        <script type="text/javascript" src="js/lib/socket.io.js"></script>
         <script type="text/javascript" src="js/services/messageService.js"></script>
         <script type="text/javascript" src="js/services/stationService.js"></script>
         <script type="text/javascript" src="js/controllers/messageForEditCtrl.js"></script>
