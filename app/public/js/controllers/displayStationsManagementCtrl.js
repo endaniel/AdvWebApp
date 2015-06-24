@@ -24,6 +24,7 @@
             enableScrollbars: false,
             data:'gridData',
             columnDefs:[
+                {field: 'address', displayName: 'Address'},
                 {field: 'id', displayName: 'Stations Id'},
                 {name: 'options', displayName: 'Options',
                     cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().delete(row.entity)">Delete</button>'}
