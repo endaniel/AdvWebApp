@@ -318,7 +318,43 @@ app.get('/template', function(req, res){
     })
 });
 
-app.d
+app.delete('/template/:name', function (req, res) {
+    var fileFullName = "templates/" + req.params.name
+    db.collection("messages").find({template: fileFullName}).toArray(function (err, docs) {
+        if(err){
+            console.log("error deleting template");
+        }
+        if(docs.length > 0){
+            res.status(400).send("enable to delete template used by message")
+        }
+        else{
+           fs.unlink("public/templates/" + req.params.name, function (err) {
+               if (err) {
+                   throw err;
+               }
+               res.json(fileFullName);
+           }) 
+        }
+    })
+})
+
+app.post('/template', multipartMiddleware,function(req,res) {
+    var tempPath = req.files.file.path;
+    var fileName = req.files.file.name;
+    fs.readFile(tempPath, function (err, data) {
+        var newPath = __dirname + "\\public\\templates\\" + fileName;
+        fs.writeFile(newPath, data, function (err) {
+            fs.unlink(tempPath, function(err) {
+                if (err) {
+                    return res.send(500, 'Something went wrong');
+                }
+
+                res.send('img/' + fileName);
+
+            });
+        });
+    });
+});
 
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});

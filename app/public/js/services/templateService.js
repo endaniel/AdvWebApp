@@ -5,11 +5,7 @@
         };
 
         this.delete = function (templateName) {
-            return $http.delete('/station/' + templateName)
-        }
-
-        this.create = function(displayStationAddress){
-            return $http.put('/station/' + displayStationAddress);
+            return $http.delete('/template/' + templateName)
         };
     }
     angular.module('app').service('templateService',['$http', templateService])
