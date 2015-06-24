@@ -13,10 +13,12 @@
         };
 
         this.getMessagesByStationId = function (stationId) {
-            return Restangular.all('messages').one('displayStation',stationId).get();
+            return Restangular.all('messages').one('displayStation', stationId).get();
+        };
+
         this.create = function(displayStationAddress){
             return $http.put('/station/' + displayStationAddress);
-        }
+        };
     }
     angular.module('app').service('stationService',['$http','Restangular', stationService])
 })();
