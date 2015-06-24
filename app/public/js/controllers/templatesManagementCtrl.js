@@ -40,19 +40,6 @@
                     cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().delete(row.entity)">Delete</button>'}
             ]
         };
-
-        $scope.create = function () {
-            //if(!$scope.displayStationAddress){
-            //    alert("please define display station address")
-            //}
-            //else{
-            //    stationService.create($scope.displayStationAddress)
-            //        .then(function (newDisplayStation) {
-            //            $scope.gridData.push(newDisplayStation.data);
-            //            $scope.displayStationAddress = "";
-            //        })
-            //}
-        }
     }
 
     angular.module('app').controller('templatesManagementCtrl', ['$scope', 'templateService', 'FileUploader', templatesManagementCtrl])

@@ -40,6 +40,16 @@
 
         templateService.getAll().then(function (templates) {
             self.allTemplates = templates.data;
+            var matchingTemplateIndex = 0;
+            for(var i = 0; i < self.allTemplates.length; i++){
+                if(self.allTemplates[i].name === self.message.template){
+                    matchingTemplateIndex = i;
+                }
+            }
+            //self.message.template = _.findWhere(self.allTemplates, function (template) {
+            //    self.message.template === template;
+            //});
+            self.message.template = self.allTemplates[matchingTemplateIndex];
         });
 
         self.addFrame = function () {

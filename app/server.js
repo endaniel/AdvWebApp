@@ -84,13 +84,17 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
             if(!docs.length) {
                 db.collection('displayStations').insertMany([
                         {
-                            id: 1
+                            id: 1,
+                            address: "ציפמן 97 רעננה"
                         },
                         {
-                            id: 2
+                            id: 2,
+                            address: "הרצל 2 קדימה"
+
                         },
                         {
-                            id: 3
+                            id: 3,
+                            address: "רמת השרון"
                         }
                     ], function(err, result){
                         if(!err){

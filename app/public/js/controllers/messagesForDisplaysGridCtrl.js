@@ -33,8 +33,8 @@
                 {field: 'messageId', displayName: 'Message Id'},
                 {field: 'displayStationId', displayName: 'Stations Id'},
                 {name: 'options', displayName: 'Options',
-                    cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>' +
-                    '<button id="editBtn" type="button" class="btn-small" ng-click="getExternalScopes().editMessage(row.entity.messageId)">Edit</button>'}
+                    cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete relation</button>' +
+                    '<button id="editBtn" type="button" class="btn-small" ng-click="getExternalScopes().editMessage(row.entity.messageId)">Edit message</button>'}
             ]
         };
 
