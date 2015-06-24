@@ -32,7 +32,7 @@
                         position: new google.maps.LatLng(coords[0], coords[1]),
                         title: info.address
                     });
-                    marker.content = '<div class="infoWindowContent">' + info.id + '</div>';
+                    marker.content = '<div class="infoWindowContent">ID: ' + info.id + '</div>';
 
                     google.maps.event.addListener(marker, 'click', function(){
                         infoWindow.setContent('<h2>' + marker.title + '</h2>' +

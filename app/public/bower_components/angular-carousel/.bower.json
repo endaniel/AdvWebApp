@@ -31,5 +31,6 @@
   },
   "_source": "git://github.com/revolunet/angular-carousel.git",
   "_target": "~0.3.12",
-  "_originalSource": "angular-carousel"
+  "_originalSource": "angular-carousel",
+  "_direct": true
 }

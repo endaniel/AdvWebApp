@@ -1,4 +1,4 @@
-<html ng-app="app" dir="rtl">
+<html ng-app="app">
     <head>
         <base href="/">
         <link rel="stylesheet" type="text/css" href="style/ui-grid.css"/>
@@ -20,11 +20,13 @@
             <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')">
                 <a href="messagesForDisplays" class="md-button md-primary">view1</a>
                 <md-divider></md-divider>
-                <a href="message/1" class="md-button md-default-theme">view2</a>
+                <a href="showMessageByDateTime" class="md-button md-primary">view orders by time</a>
                 <md-divider></md-divider>
                 <a href="displayStations" class="md-button md-default-theme">view4</a>
                 <md-divider></md-divider>
-                <a href="displayStationsLocation" class="md-button md-default-theme">Display stations location</a>
+                <a href="displayStationsLocation" class="md-button md-default-theme">stations location</a>
+                <md-divider></md-divider>
+                <a href="graphs" class="md-button md-default-theme">Graphs</a>
                 <md-divider></md-divider>
                 <a href="about" class="md-button md-default-theme">about</a>
             </md-sidenav>
@@ -35,6 +37,7 @@
         <script type="text/javascript" src="js/lib/angular-animate.js"></script>
         <script type="text/javascript" src="js/lib/angular-touch.js"></script>
         <script type="text/javascript" src="js/lib/angular-route.js"></script>
+        <script type="text/javascript" src="js/lib/d3.js"></script>
         <script type="text/javascript" src="bower_components/angular-aria/angular-aria.js"></script>
         <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
         <script type="text/javascript" src="bower_components/restangular/dist/restangular.js"></script>
@@ -46,15 +49,20 @@
         <script type="text/javascript" src="js/lib/jquery.js"></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
         <script type="text/javascript" src="js/lib/socket.io.js"></script>
+        <script type="text/javascript" src="js/services/messageService.js"></script>
+        <script type="text/javascript" src="js/services/stationService.js"></script>
         <script type="text/javascript" src="js/controllers/messageForEditCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/messagesForDisplaysGridCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/newMessageDisplayRelationCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/displayStationsManagementCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/displayStationsLocationCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/graphsCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/xyGraphsCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
-        <script type="text/javascript" src="js/services/messageService.js"></script>
-        <script type="text/javascript" src="js/services/stationService.js"></script>
+        <script type="text/javascript" src="js/controllers/showMessageByDateTimeCtrl.js"></script>
         <script type="text/javascript" src="js/directives/ngThumb.js"></script>
+        <script type="text/javascript" src="js/directives/d3Bars.js"></script>
+        <script type="text/javascript" src="js/directives/d3XYBars.js"></script>
         <script	src="http://maps.googleapis.com/maps/api/js?sensor=false&language=he"></script>
     </body>
 </html>

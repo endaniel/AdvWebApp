@@ -1,0 +1,18 @@
+<div layout="column">
+    <div layout="column" layout-align="center center">
+        <div layout="column">
+            <div layout="row" class="space-top">
+                <label flex flex-oreder="1">בחר מסך</label>
+                <input flex offset="5" flex-oreder="2" type="number" min="0" ng-model="messageByDateTime.message.displayStationId">
+                <label flex flex-oreder="3">בחר תאריך</label>
+                <input flex="30" offset="5" flex-oreder="4" type="datetime-local" ng-model="messageByDateTime.message.date">
+                <md-button ng-click="messageByDateTime.getMessage()">הצג</md-button>
+            </div>
+        </div>
+    </div>
+    <div layout="column">
+        <div ng-repeat="message in messageByDateTime.messages">
+            <ng-include src="message.template"></ng-include>
+        </div>
+    </div>
+</div>

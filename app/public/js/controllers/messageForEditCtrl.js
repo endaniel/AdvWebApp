@@ -5,6 +5,13 @@
         var messageId = $routeParams.id;
         self.uploader = new FileUploader();
         self.uploader.queueLimit = 5;
+        self.uploader.url = 'data/file';
+        self.uploader.autoUpload = true;
+
+
+        self.uploader.onSuccessItem = function(fileItem, response, status, headers) {
+            self.message.pictures.push('img/' +fileItem._file.name);
+        };
         self.days = [1,2,3,4,5,6,7];
 
         if(messageId == 0 || messageId == undefined){
