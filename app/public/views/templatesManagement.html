@@ -1,6 +1,7 @@
 <div layout="column">
-    <div layout="row">
-        <button id="addBtn" type="button" class="btn-small" ng-click="create()">Create</button>
+    <div layout="column" class="space-top">
+        <input type="file" nv-file-select uploader="uploader" flex flex-order="2" multiple/>
+        <label flex flex-order="1">Add template</label>
     </div>
 </div>
 <div layout="row" ui-grid="gridOptions" external-scopes="gridScope"/>

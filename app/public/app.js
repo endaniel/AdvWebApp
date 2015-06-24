@@ -44,6 +44,9 @@
             .when('/displayStation',{
                 templateUrl: 'views/displayStation.html'
             })
+            .when('/displayStation',{
+                templateUrl: 'views/displayStation.html'
+            })
             .when('/displayStationsLocation',{
                 templateUrl: 'views/displayStationsLocation.html',
                 controller: 'displayStationsLocationCtrl'
