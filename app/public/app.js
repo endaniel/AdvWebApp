@@ -36,6 +36,11 @@
                 templateUrl: 'views/displayStationsAndTemplatesManagement.html',
                 controller: 'displayStationsAndTemplatesManagementCtrl'
             })
+            .when('/showMessageByDateTime',{
+                templateUrl: 'views/showMessageByDateTime.html',
+                controller: 'showMessageByDateTimeCtrl',
+                controllerAs:'messageByDateTime'
+            })
             .otherwise({
                 templateUrl:'views/home.html'
             });

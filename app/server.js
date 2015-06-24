@@ -8,6 +8,9 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var _ = require('underscore');
+var fs = require('fs');
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
 var db = {};
 
 MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
@@ -22,7 +25,7 @@ MongoClient.connect("mongodb://127.0.0.1:27017/test", function(err, database){
                        id: 1,
                        name: 'guy',
                        text: ['first','second','third','forth'],
-                       pictures: ['img/first.jpg','img/second.jpg'],
+                       pictures: [],
                        template: 'templates/templateA.html',
                        time: 5,
                        timeFrames: [{dateFrom: '2014-01-01',dateTo: '2015-12-31', dayOfTheWeek: [2,3,4], timeOfDayFrom: '6:00:00', timeOfDayTo: '12:00:00' }],
@@ -185,6 +188,12 @@ app.get('/messageDisplayRelation', function(req, res){
     })
 });
 
+app.get('/messages/displayStation/:id',function(req, res){
+    db.collection("messages").find({displayStationIds: { $eq: parseInt(req.params.id) }}).toArray(function(err, docs) {
+        res.json(docs);
+    });
+});
+
 app.put('/messageDisplayRelation/:messageId/:displayStationId/:actionType', function(req, res){
     var messageId = +req.params.messageId;
     var displayStationId = +req.params.displayStationId;
@@ -208,6 +217,23 @@ app.put('/messageDisplayRelation/:messageId/:displayStationId/:actionType', func
     }
 });
 
+app.post('/data/file', multipartMiddleware,function(req,res) {
+    var tempPath = req.files.file.path;
+    var fileName = req.files.file.name;
+    fs.readFile(tempPath, function (err, data) {
+        var newPath = __dirname + "\\public\\img\\" + fileName;
+        fs.writeFile(newPath, data, function (err) {
+            fs.unlink(tempPath, function(err) {
+                if (err) {
+                    return res.send(500, 'Something went wrong');
+                }
+
+                res.send('img/' + fileName);
+
+            });
+        });
+    });
+});
 
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});
