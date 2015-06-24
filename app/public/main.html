@@ -24,6 +24,8 @@
                 <md-divider></md-divider>
                 <a href="displayStations" class="md-button md-default-theme">view4</a>
                 <md-divider></md-divider>
+                <a href="displayStationsLocation" class="md-button md-default-theme">Display stations location</a>
+                <md-divider></md-divider>
                 <a href="about" class="md-button md-default-theme">about</a>
             </md-sidenav>
             <ng-view flex></ng-view>
@@ -48,10 +50,12 @@
         <script type="text/javascript" src="js/controllers/messagesForDisplaysGridCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/newMessageDisplayRelationCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/displayStationsManagementCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/displayStationsLocationCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
         <script type="text/javascript" src="js/services/messageService.js"></script>
         <script type="text/javascript" src="js/services/stationService.js"></script>
         <script type="text/javascript" src="js/directives/ngThumb.js"></script>
+        <script	src="http://maps.googleapis.com/maps/api/js?sensor=false&language=he"></script>
     </body>
 </html>
 

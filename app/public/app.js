@@ -36,6 +36,10 @@
                 templateUrl: 'views/displayStationsManagement.html',
                 controller: 'displayStationsManagementCtrl'
             })
+            .when('/displayStationsLocation',{
+                templateUrl: 'views/displayStationsLocation.html',
+                controller: 'displayStationsLocationCtrl'
+            })
             .otherwise({
                 templateUrl:'views/home.html'
             });
