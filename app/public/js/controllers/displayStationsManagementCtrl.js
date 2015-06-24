@@ -4,7 +4,7 @@
         $scope.displayStationAddress = "";
         stationService.getAll().success(function (stations) {
             $scope.gridData = stations;
-        })
+        });
 
         $scope.gridScope = {
             delete: function(displayStationId){
