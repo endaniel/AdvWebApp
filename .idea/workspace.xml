@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb155e3c-dec5-43dc-8c10-bdcaf058359f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ex2.iml" afterPath="$PROJECT_DIR$/.idea/Ex2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Ex3_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Ex3_node_modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/controllers/displayStationsManagementCtrl.js" afterPath="$PROJECT_DIR$/app/public/js/controllers/displayStationsManagementCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/main.html" afterPath="$PROJECT_DIR$/app/public/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/views/message.html" afterPath="$PROJECT_DIR$/app/public/views/message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/js/services/stationService.js" afterPath="$PROJECT_DIR$/app/public/js/services/stationService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/templates/templateA.html" afterPath="$PROJECT_DIR$/app/public/templates/templateA.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/templates/templateB.html" afterPath="$PROJECT_DIR$/app/public/templates/templateB.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/templates/templateC.html" afterPath="$PROJECT_DIR$/app/public/templates/templateC.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/public/views/showMessageByDateTime.html" afterPath="$PROJECT_DIR$/app/public/views/showMessageByDateTime.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ex2.iws" />
@@ -37,8 +30,8 @@
       <file leaf-file-name="message.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/views/message.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8076925">
-              <caret line="63" column="102" selection-start-line="63" selection-start-column="102" selection-end-line="63" selection-end-column="102" />
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="66" column="94" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#13;n#div#0;n#form#0;n#!!top" expanded="true" />
               </folding>
@@ -76,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="showMessageByDateTime.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/public/views/showMessageByDateTime.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.10381679">
+              <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -121,18 +114,18 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.9">
-              <caret line="51" column="102" selection-start-line="51" selection-start-column="102" selection-end-line="51" selection-end-column="102" />
+            <state vertical-scroll-proportion="-3.1166666">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="templateC.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="templateC.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/templates/templateC.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7526718">
-              <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -192,16 +185,16 @@
         <option value="$PROJECT_DIR$/app/public/js/controllers/showMessageByDateTime.js" />
         <option value="$PROJECT_DIR$/app/public/app.js" />
         <option value="$PROJECT_DIR$/app/public/js/controllers/showMessageByDateTimeCtrl.js" />
-        <option value="$PROJECT_DIR$/app/public/views/showMessageByDateTime.html" />
         <option value="$PROJECT_DIR$/app/server.js" />
         <option value="$PROJECT_DIR$/app/public/js/controllers/messageForEditCtrl.js" />
-        <option value="$PROJECT_DIR$/app/public/views/message.html" />
         <option value="$PROJECT_DIR$/app/public/js/services/stationService.js" />
         <option value="$PROJECT_DIR$/app/public/js/controllers/displayStationsManagementCtrl.js" />
-        <option value="$PROJECT_DIR$/app/public/main.html" />
         <option value="$PROJECT_DIR$/app/public/templates/templateA.html" />
         <option value="$PROJECT_DIR$/app/public/templates/templateB.html" />
         <option value="$PROJECT_DIR$/app/public/templates/templateC.html" />
+        <option value="$PROJECT_DIR$/app/public/main.html" />
+        <option value="$PROJECT_DIR$/app/public/views/message.html" />
+        <option value="$PROJECT_DIR$/app/public/views/showMessageByDateTime.html" />
       </list>
     </option>
   </component>
@@ -808,7 +801,7 @@
       <workItem from="1434904754629" duration="4420000" />
       <workItem from="1434990231099" duration="21162000" />
       <workItem from="1435148638905" duration="42000" />
-      <workItem from="1435149117884" duration="1460000" />
+      <workItem from="1435149117884" duration="3015000" />
     </task>
     <task id="LOCAL-00001" summary="add angular mateial">
       <created>1434562157225</created>
@@ -852,11 +845,17 @@
       <option name="project" value="LOCAL" />
       <updated>1435149159481</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://github.com/endaniel/AdvWebApp&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;app/public/bower_components/angular-carousel/.bower.json&#10;&#9;app/public/bower_components/angular-file-upload/.bower.json&#10;&#9;app/public/bower_components/angular-ui-select/.bower.json&#10;&#9;app/public/js/services/stationService.js&#10;&#9;app/public/main.html&#10;">
+      <created>1435152668411</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1435152668411</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103964000" />
+    <option name="totallyTimeSpent" value="105519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1050" extended-state="0" />
@@ -1235,14 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/showMessageByDateTime.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/layer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3321739">
@@ -1273,16 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/message.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8076925">
-          <caret line="63" column="102" selection-start-line="63" selection-start-column="102" selection-end-line="63" selection-end-column="102" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#13;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/services/stationService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1295,14 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9">
-          <caret line="51" column="102" selection-start-line="51" selection-start-column="102" selection-end-line="51" selection-end-column="102" />
           <folding />
         </state>
       </provider>
@@ -1335,11 +1308,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/templates/templateC.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7526718">
-          <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1166666">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/views/message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="66" column="94" selection-start-line="66" selection-start-column="94" selection-end-line="66" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#13;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/views/showMessageByDateTime.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10381679">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
