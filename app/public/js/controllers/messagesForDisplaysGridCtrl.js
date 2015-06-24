@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    function messagesForDisplaysGridCtrl($scope, messageDisplayRelations, messageService, uiGridConstants, $filter){
+    function messagesForDisplaysGridCtrl($scope, messageDisplayRelations, messageService, $filter, $location){
         var self = this;
         $scope.searchedDisplayStation = "";
         $scope.searchedMessage = "";
@@ -20,6 +20,9 @@
                     .error(function () {
                         console.log("error")
                     })
+            },
+            editMessage: function (messageId) {
+                $location.path('message/' + messageId);
             }
         };
         $scope.gridOptions = {
@@ -27,10 +30,11 @@
             enableScrollbars: false,
             data:'gridData',
             columnDefs:[
-                {field: 'messageId', displayName: 'Message Id', enableFiltering: true},
+                {field: 'messageId', displayName: 'Message Id'},
                 {field: 'displayStationId', displayName: 'Stations Id'},
                 {name: 'options', displayName: 'Options',
-                    cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>', enableFiltering: false}
+                    cellTemplate: '<button id="deleteBtn" type="button" class="btn-small" ng-click="getExternalScopes().deleteRelation(row.entity)">Delete</button>' +
+                    '<button id="editBtn" type="button" class="btn-small" ng-click="getExternalScopes().editMessage(row.entity.messageId)">Edit</button>'}
             ]
         };
 
@@ -39,6 +43,14 @@
             self.filterByDisplayStation();
             self.filterByMessage();
         };
+        
+        $scope.directToMessageCreation = function () {
+            $location.path('message/0');
+        }
+
+        $scope.directToNewRelation = function () {
+            $location.path("newMessageDisplayRelation");
+        }
 
         self.filterByDisplayStation = function() {
             $scope.gridData = $filter('filter')($scope.gridData, {'displayStationId': $scope.searchedDisplayStation}, undefined);
@@ -48,5 +60,5 @@
             $scope.gridData = $filter('filter')($scope.gridData, {'messageId': $scope.searchedMessage}, undefined);
         };
     }
-    angular.module('app').controller('messagesForDisplaysGridCtrl', ['$scope', 'messageDisplayRelations', 'messageService', 'uiGridConstants', '$filter', messagesForDisplaysGridCtrl])
+    angular.module('app').controller('messagesForDisplaysGridCtrl', ['$scope', 'messageDisplayRelations', 'messageService', '$filter', '$location', messagesForDisplaysGridCtrl])
 })();
