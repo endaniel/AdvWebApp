@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('app', ['ngRoute', 'ui.grid', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular','angularFileUpload','angular-carousel','ui.select','screenApp']);
+    var app = angular.module('app', ['ngRoute', 'ui.grid', 'd3', 'ui.grid.selection', 'ngAnimate', 'ngTouch','ngMaterial','restangular','angularFileUpload','angular-carousel','ui.select']);
     app.config(function($routeProvider,$locationProvider){
         $locationProvider.html5Mode(true).hashPrefix('!');
         $routeProvider
@@ -43,6 +43,14 @@
             })
             .when('/displayStation',{
                 templateUrl: 'views/displayStation.html'
+            })
+            .when('/displayStationsLocation',{
+                templateUrl: 'views/displayStationsLocation.html',
+                controller: 'displayStationsLocationCtrl'
+            })
+            .when('/graphs',{
+                templateUrl: 'views/graphs.html',
+                controller: 'graphsCtrl'
             })
             .otherwise({
                 templateUrl:'views/home.html'

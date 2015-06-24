@@ -274,6 +274,19 @@ io.on('connection', function(socket){
     console.log('a user connected');
 });
 
+app.get('/templatesUsage', function(req, res){
+    db.collection("messages").aggregate([
+        {"$group" : {_id:"template", sum:{$sum:1}}}
+    ]).toArray(function (err, docs) {
+        if(err){
+            console.log("error getting group by")
+        }
+        else{
+            res.json(docs)
+        }
+    })
+});
+
 app.get('*', function(req,res) {
     res.sendFile('main.html', {root:path.join(__dirname, 'public')});
 });

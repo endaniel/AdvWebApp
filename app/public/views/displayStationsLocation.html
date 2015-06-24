@@ -1,0 +1,5 @@
+<div id="map"></div>
+<div id="repeat" ng-repeat="marker in markers">
+    <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+        <label id="names" >{{marker.address}}</label></a>
+</div>

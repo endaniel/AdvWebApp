@@ -45,5 +45,6 @@
         }
     }
 
+
     angular.module('app').controller('displayStationsManagementCtrl', ['$scope', 'stationService', displayStationsManagementCtrl])
 })();
