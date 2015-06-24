@@ -185,7 +185,8 @@ app.get('/api/message/:id', function(req, res){
 app.put('/api/message/:id', function(req, res){
     var message = req.body;
     delete message._id;
-    db.collection("messages").findOneAndUpdate({id: parseInt(req.params.id)}, message, function(err, docs) {
+    db.collection("messages").findOneAndUpdate({id: parseInt(req.params.id)}, message,{returnOriginal: false}, function(err, docs) {
+        io.emit('messageChanged',docs.value)
         res.json(docs.value);
     });
 });
@@ -195,6 +196,7 @@ app.post('/api/message', function(req, res){
         var message = req.body;
         message.id = docs.id + 1;
         db.collection("messages").insertOne(req.body, function(err, docs) {
+            io.emit('messageChanged', docs.ops[0]);
             res.json(docs.ops[0]);
         });
     });
@@ -266,6 +268,10 @@ app.post('/data/file', multipartMiddleware,function(req,res) {
             });
         });
     });
+});
+
+io.on('connection', function(socket){
+    console.log('a user connected');
 });
 
 app.get('/templatesUsage', function(req, res){
