@@ -52,6 +52,10 @@
                 templateUrl: 'views/graphs.html',
                 controller: 'graphsCtrl'
             })
+            .when('/templates', {
+                templateUrl: 'views/templatesManagement.html',
+                controller: 'templatesManagementCtrl'
+            })
             .otherwise({
                 templateUrl:'views/home.html'
             });

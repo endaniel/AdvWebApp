@@ -32,7 +32,7 @@
                 //Render graph based on 'data'
                 scope.render = function(data) {
                     //Set our scale's domains
-                    x.domain(data.map(function(d) { return d.name; }));
+                    x.domain(data.map(function(d) { return d._id.slice(10, d._id.length); }));
                     y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
                     var color = d3.scale.category20();
@@ -63,7 +63,7 @@
                         .append("rect")
                         .attr("class", "bar")
                         .attr("fill", function(d) { return color(d.count); })
-                        .attr("x", function(d) { return x(d.name); })
+                        .attr("x", function(d) { return x(d._id); })
                         .attr("width", x.rangeBand())
                         .transition()
                         .duration(1000)

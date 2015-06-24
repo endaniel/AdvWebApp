@@ -18,15 +18,17 @@
         </md-toolbar>
         <div layout="row" flex>
             <md-sidenav layout="column" class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')">
-                <a href="messagesForDisplays" class="md-button md-primary">view1</a>
+                <a href="messagesForDisplays" class="md-button md-primary">Messages Station's</a>
                 <md-divider></md-divider>
                 <a href="showMessageByDateTime" class="md-button md-primary">view orders by time</a>
                 <md-divider></md-divider>
-                <a href="displayStations" class="md-button md-default-theme">view4</a>
+                <a href="displayStations" class="md-button md-default-theme">Stations management</a>
                 <md-divider></md-divider>
                 <a href="displayStation" class="md-button md-default-theme">show display screen 1</a>
                 <md-divider></md-divider>
                 <a href="displayStationsLocation" class="md-button md-default-theme">stations location</a>
+                <md-divider></md-divider>
+                <a href="templates" class="md-button md-default-theme">Templates management</a>
                 <md-divider></md-divider>
                 <a href="graphs" class="md-button md-default-theme">Graphs</a>
                 <md-divider></md-divider>
@@ -59,15 +61,17 @@
         <script type="text/javascript" src="js/lib/ui-grid.js"></script>
         <script type="text/javascript" src="js/lib/jquery.js"></script>
         <script type="text/javascript" src="js/lib/underscore.js"></script>
+        <script type="text/javascript" src="js/lib/socket.io.js"></script>
         <script type="text/javascript" src="js/services/messageService.js"></script>
         <script type="text/javascript" src="js/services/stationService.js"></script>
+        <script type="text/javascript" src="js/services/templateService.js"></script>
         <script type="text/javascript" src="js/controllers/messageForEditCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/messagesForDisplaysGridCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/newMessageDisplayRelationCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/displayStationsManagementCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/displayStationsLocationCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/templatesManagementCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/graphsCtrl.js"></script>
-        <script type="text/javascript" src="js/controllers/xyGraphsCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
         <script type="text/javascript" src="js/controllers/showMessageByDateTimeCtrl.js"></script>
         <script type="text/javascript" src="js/directives/ngThumb.js"></script>

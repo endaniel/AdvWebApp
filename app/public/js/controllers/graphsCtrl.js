@@ -2,24 +2,17 @@
     "use strict";
     function graphsCtrl($scope, stationService){
 
-        $scope.d3Data = [
-            {name: "Greg", score:68},
-            {name: "Ari", score:86},
-            {name: "Loser", score: 28}
-        ];
+        stationService.getTemplatesGroup().success(function (stations) {
+            $scope.myData = stations;
+        });
 
-        $scope.myData = [
-            {name: 'AngularJS', count: 300},
-            {name: 'D3.JS', count: 150},
-            {name: 'jQuery', count: 400},
-            {name: 'Backbone.js', count: 300},
-            {name: 'Ember.js', count: 100}
-        ];
+        stationService.getScreensPerMessage().success(function (stations) {
+            $scope.d3Data = stations;
+            $scope.d3OnClick = function(item){
+                alert(item.name);
+            }});
 
 
-        $scope.d3OnClick = function(item){
-            alert(item.name);
-        };
     }
     angular.module('app').controller('graphsCtrl', ['$scope', 'stationService', graphsCtrl])
 })();
