@@ -196,7 +196,6 @@ app.post('/api/message', function(req, res){
         var message = req.body;
         message.id = docs.id + 1;
         db.collection("messages").insertOne(req.body, function(err, docs) {
-            io.emit('messageChanged', docs.ops[0]);
             res.json(docs.ops[0]);
         });
     });
