@@ -308,17 +308,13 @@ app.get('/screensPerMessage', function(req, res){
 });
 
 app.get('/template', function(req, res){
-    fs.readdir("public/templates", function (err, files) {
-        if(err){
-            console.log("error reading templates names from directory");
-        }
-        else{
-            var fileNamesObjectArray = _.map(files, function (file) {
-                return {name: "templates/" + file};
-            })
-            res.json(fileNamesObjectArray);
-        }
-    })
+    var files = fs.readdirSync("public/templates");
+    var fileNamesObjectArray = _.map(files, function (file) {
+        return "templates/" + file;
+    });
+    res.json(fileNamesObjectArray);
+
+
 });
 
 app.delete('/template/:name', function (req, res) {
@@ -331,7 +327,7 @@ app.delete('/template/:name', function (req, res) {
             res.status(400).send("enable to delete template used by message")
         }
         else{
-           fs.unlink("public/templates/" + req.params.name, function (err) {
+           fs.unlink(__dirname + "/templates/" + req.params.name, function (err) {
                if (err) {
                    throw err;
                }

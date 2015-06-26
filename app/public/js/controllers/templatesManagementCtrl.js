@@ -14,8 +14,10 @@
 
         templateService.getAll()
             .then(function(templatesNames){
-                $scope.gridData =  templatesNames.data;
-        })
+                $scope.gridData = _.map(templatesNames.data, function (template) {
+                    return { name: template}
+                });
+        });
 
         $scope.gridScope = {
             delete: function(template){

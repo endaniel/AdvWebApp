@@ -7,7 +7,7 @@
         self.uploader.queueLimit = 5;
         self.uploader.url = 'data/file';
         self.uploader.autoUpload = true;
-        self.allTemplates = []
+        self.allTemplates = [];
 
         self.uploader.onSuccessItem = function(fileItem, response, status, headers) {
             self.message.pictures.push('img/' +fileItem._file.name);
@@ -16,9 +16,11 @@
 
         if(messageId == 0 || messageId == undefined){
             self.message = { id: 0, timeFrames:[],displayStationIds:[]};
+            init()
         } else{
             messageService.get(messageId).then(function (message) {
                 self.message = message;
+                init();
             });
         }
 
@@ -38,19 +40,19 @@
             }
         };
 
-        templateService.getAll().then(function (templates) {
-            self.allTemplates = templates.data;
-            var matchingTemplateIndex = 0;
-            for(var i = 0; i < self.allTemplates.length; i++){
-                if(self.allTemplates[i].name === self.message.template){
-                    matchingTemplateIndex = i;
+        function init(){
+            templateService.getAll().then(function (templates) {
+                self.allTemplates = templates.data;
+                var matchingTemplateIndex = 0;
+                for(var i = 0; i < self.allTemplates.length; i++){
+                    if(self.allTemplates[i] === self.message.template){
+                        matchingTemplateIndex = i;
+                    }
                 }
-            }
-            //self.message.template = _.findWhere(self.allTemplates, function (template) {
-            //    self.message.template === template;
-            //});
-            self.message.template = self.allTemplates[matchingTemplateIndex];
-        });
+
+                self.message.template = self.allTemplates[matchingTemplateIndex];
+            });
+        }
 
         self.addFrame = function () {
             self.message.timeFrames.push( {dateFrom: '',dateTo: '', dayOfTheWeek: [], timeOfDayFrom: '', timeOfDayTo: '' });

@@ -1,1 +1,0 @@
-node %CD%\app\server.js
